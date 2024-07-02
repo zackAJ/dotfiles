@@ -72,8 +72,6 @@ function symbulklink()
 	done <<< "$files"
 }
 
-eval "$(thefuck --alias)"
-
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 export NVM_DIR="$HOME/.nvm"
