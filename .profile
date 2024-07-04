@@ -77,3 +77,13 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#OS/PC specific configs
+#pc config file convention name: .{os/pc_id}rc
+
+OS_ID="$(cat /etc/os-release | grep '^ID=' | sed 's/^ID=//')"
+# echo ${OS_ID}
+
+if [ "$OS_ID" = 'linuxmint' ] || [ "$OS_ID" = 'TODO' ]; then
+source ".${OS_ID}rc"
+fi
