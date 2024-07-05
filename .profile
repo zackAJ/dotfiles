@@ -8,6 +8,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+#colors
+source .colorsrc
+
 # if running bash
 # if [ -n "$BASH_VERSION" ]; then
 #     # include .bashrc if it exists
@@ -29,32 +32,38 @@ fi
 #my personal config
 
 bdelete(){
+    echo_bold
+
     if [ $# -eq 0 ] ; then
-	echo 'no branch name specified'
-	return 1
+	echo_red ' no branch name specified'
+	return  1
     fi
 
-    branches=$(git branch -l | grep -v $(git branch --show-current) | grep "$1")
+    CURRENT=$(git branch --show-current)
+    echo_blue "\n excluding current branch: ${_GREEN}${CURRENT}"
+    echo_blue "\n excluding these branches if they exist: ${_GREEN}master main dev staging\n"
+
+    branches=$(git branch -l | grep -v -e "${CURRENT}$" -e master$ -e main$ -e dev$ -e staging | grep "$1")
 
     if [ -z "$branches" ] ; then
-    	echo 'no branches found'
-	return 0
+    	echo_yellow ' no branches found'
+	return  0
     fi
 	
     if [ -n "$branches" ] ; then
-	tput setaf 1
-	echo -e "$branches \n"
-	tput sgr0  
-
-	echo "are you sure you want to delete these branches ? y/n"
+	echo_blue " branches found:\n"
+	echo_red  "$branches \n"
+	echo_white "are you sure you want to delete these branches ? ${_GREEN}y${_WHITE}/${_RED}n"
+	echo_white
 	read arg
     fi	
 
     if [ "$arg" != "y" ] ; then
-	echo 'aborted'
-	return 0
+	echo_red ' aborted'
+	return  0
     fi
 
+    echo_cyan
     git branch -D $(git branch -l | grep -v $(git branch --show-current) | grep "$1")
 }
 

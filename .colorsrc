@@ -1,0 +1,89 @@
+# variables
+_BLACK=$(tput setaf 0)
+_RED=$(tput setaf 1)
+_GREEN=$(tput setaf 2)
+_YELLOW=$(tput setaf 3)
+_BLUE=$(tput setaf 4)
+_MAGENTA=$(tput setaf 5)
+_CYAN=$(tput setaf 6)
+_WHITE=$(tput setaf 7)
+_RESET=$(tput sgr0)
+_BOLD=$(tput bold)
+
+# inline helper with reset
+echo_black_reset() {
+  echo "${_BLACK}$1${_RESET}"
+}
+
+echo_red_reset() {
+  echo "${_RED}$1${_RESET}"
+}
+
+echo_green_reset() {
+  echo "${_GREEN}$1${_RESET}"
+}
+
+echo_yellow_reset() {
+  echo "${_YELLOW}$1${_RESET}"
+}
+
+echo_blue_reset() {
+  echo "${_BLUE}$1${_RESET}"
+}
+
+echo_magenta_reset() {
+  echo "${_MAGENTA}$1${_RESET}"
+}
+
+echo_cyan_reset() {
+  echo "${_CYAN}$1${_RESET}"
+}
+
+echo_white_reset() {
+  echo "${_WHITE}$1${_RESET}"
+}
+
+echo_bold_reset() {
+  echo "${_BOLD}$1${_RESET}"
+}
+
+# inline helper
+echo_black(){
+  echo "${_BLACK}$1"
+}
+
+echo_red(){
+  echo "${_RED}$1"
+}
+
+echo_green(){
+  echo "${_GREEN}$1"
+}
+
+echo_yellow(){
+  echo "${_YELLOW}$1"
+}
+
+echo_blue(){
+  echo "${_BLUE}$1"
+}
+
+echo_magenta(){
+  echo "${_MAGENTA}$1"
+}
+
+echo_cyan(){
+  echo "${_CYAN}$1"
+}
+
+echo_white(){
+  echo "${_WHITE}$1"
+}
+
+echo_bold(){
+  echo "${_BOLD}$1"
+}
+
+echo_reset(){
+  echo "${_RESET}"
+}
