@@ -1,4 +1,4 @@
-if [[ $- == *i* ]] then
+if [[ $- == *i* ]] ; then
 # variables
 _BLACK=$(tput setaf 0)
 _RED=$(tput setaf 1)
