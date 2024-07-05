@@ -40,8 +40,8 @@ bdelete(){
     fi
 
     CURRENT=$(git branch --show-current)
-    echo_blue "\n excluding current branch: ${_GREEN}${CURRENT}"
-    echo_blue "\n excluding these branches if they exist: ${_GREEN}master main dev staging\n"
+    echo_blue " excluding current branch: ${_GREEN}${CURRENT}\n"
+    echo_blue " excluding these branches if they exist: ${_GREEN}master main dev staging\n"
 
     branches=$(git branch -l | grep -v -e "${CURRENT}$" -e master$ -e main$ -e dev$ -e staging | grep "$1")
 
