@@ -1,3 +1,4 @@
+if [[ $- == *i* ]] then
 # variables
 _BLACK=$(tput setaf 0)
 _RED=$(tput setaf 1)
@@ -87,3 +88,5 @@ echo_bold(){
 echo_reset(){
   echo "${_RESET}"
 }
+
+fi
