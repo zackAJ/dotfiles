@@ -66,7 +66,7 @@ function symbulklink()
 	while IFS= read -r line ;
 	do
 	    if [ "$line" != ".git" ] && [ "$line" != ".gitignore" ] ; then
-		ln -s ~/dotfiles/"$line" ~/test/"$line"
+		ln -s ~/dotfiles/"$line" ~/"$line"
 	    fi
 
 	done <<< "$files"
@@ -80,7 +80,6 @@ export NVM_DIR="$HOME/.nvm"
 
 #OS/PC specific configs
 #pc config file convention name: .{os/pc_id}rc
-
 OS_ID="$(cat /etc/os-release | grep '^ID=' | sed 's/^ID=//')"
 # echo ${OS_ID}
 
