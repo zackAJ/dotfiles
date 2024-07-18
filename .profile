@@ -9,7 +9,7 @@
 #umask 022
 
 #colors
-source .colorsrc
+source ~/.colorsrc
 
 # if running bash
 # if [ -n "$BASH_VERSION" ]; then
@@ -93,5 +93,5 @@ OS_ID="$(cat /etc/os-release | grep '^ID=' | sed 's/^ID=//')"
 # echo ${OS_ID}
 
 if [ "$OS_ID" = 'linuxmint' ] || [ "$OS_ID" = 'TODO' ]; then
-source ".${OS_ID}rc"
+source ~/.${OS_ID}rc
 fi
