@@ -81,6 +81,12 @@ function symbulklink()
 	done <<< "$files"
 }
 
+# load virtual sound outputs using the cursed pulseAudio
+function loadAudioOutputs()
+{
+    pactl load-module module-null-sink sink_name="$1_output" sink_properties=device.description="$1_output"
+}
+
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 export NVM_DIR="$HOME/.nvm"
