@@ -101,3 +101,5 @@ OS_ID="$(cat /etc/os-release | grep '^ID=' | sed 's/^ID=//')"
 if [ "$OS_ID" = 'linuxmint' ] || [ "$OS_ID" = 'TODO' ]; then
 source ~/.${OS_ID}rc
 fi
+
+export PATH=~/.config/composer/vendor/bin:$PATH
